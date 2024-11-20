@@ -420,9 +420,10 @@ h5,
 
 .site-navbar .site-logo {
   position: absolute;
-  left: 0;
+  left: -45px;
   top: 0;
-  margin-top: -20px;
+  width: 280px;
+  margin-top: -120px;
 }
 
 .site-navbar .site-navigation.border-bottom {
@@ -1377,7 +1378,7 @@ h5,
 
   .block-13 .owl-nav,
   .slide-one-item .owl-nav {
-    bottom: -70px ;
+    bottom: -70px;
   }
 }
 
@@ -1724,7 +1725,7 @@ h5,
 .overlap-section {
   margin-top: -150px;
   position: relative;
-  z-index: 9;
+  z-index: 9px;
 }
 
 .unit-4 .unit-4-icon span {
@@ -1992,9 +1993,11 @@ h5,
   background: #e6e6e6;
   color: #000;
 }
+
 .footer-logo {
   max-width: 350px;
-  height: 300px; 
-  vertical-align: middle; 
+  height: 300px;
+  vertical-align: middle;
   /* margin: 0 5px;  */
 }
+
