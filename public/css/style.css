@@ -1992,3 +1992,9 @@ h5,
   background: #e6e6e6;
   color: #000;
 }
+.footer-logo {
+  max-width: 350px;
+  height: 300px; 
+  vertical-align: middle; 
+  /* margin: 0 5px;  */
+}
