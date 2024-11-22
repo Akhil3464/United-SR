@@ -34,10 +34,7 @@ app.get('/:page', (req, res) => {
         }
     });
 });
-// Handle 404 error for undefined routes
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
-});
+
 app.post('/get-quote', async (req, res) => {
     let { fq_name, fq_email } = req.body;
 
