@@ -24,13 +24,13 @@ app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
 // Define routes for your site
 // Dynamic routing for all HTML files
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'pages', 'index.html'));
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 app.get('/:page', (req, res) => {
     const page = req.params.page;
-    res.sendFile(path.join(__dirname, 'public', 'pages', `${page}.html`), (err) => {
+    res.sendFile(path.join(__dirname, 'views', `${page}.html`), (err) => {
         if (err) {
-            res.status(404).sendFile(path.join(__dirname, 'public', 'pages', '404.html'));
+            res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
         }
     });
 });
@@ -63,7 +63,7 @@ app.post('/get-quote', async (req, res) => {
     
     Warm regards,  
     **United SR Logistics Team**  
-    🌐 [www.unitedsrlogistics.com](https://www.unitedsrlogistics.com) | 📧 unitedsrlogistics@gmail.com
+    🌐 [www.unitedsrlogistics.com](http://www.unitedsrlogistics.com) | 📧 unitedsrlogistics@gmail.com
     `;
 
     const transporter = nodemailer.createTransport({
@@ -101,7 +101,7 @@ app.post('/get-quote', async (req, res) => {
                     <strong>United SR Logistics Team</strong><br>
                 </p>
                 <footer style="margin-top: 20px; font-size: 12px; color: #555;">
-                    🌐 <a href="https://www.unitedsrlogistics.com" style="color: #2d89ef;">www.unitedsrlogistics.com</a><br />
+                    🌐 <a href="http://www.unitedsrlogistics.com" style="color: #2d89ef;">www.unitedsrlogistics.com</a><br />
                     📧 unitedsrlogistics@gmail.com
                 </footer>
             </div>
