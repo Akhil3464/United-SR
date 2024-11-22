@@ -18,6 +18,7 @@ app.use('/scss', express.static(path.join(__dirname, 'scss')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/videos', express.static(path.join(__dirname, 'videos')));
 app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
 
 // Define routes for your site
