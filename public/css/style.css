@@ -1733,6 +1733,34 @@ h5,
   font-size: 3rem;
 }
 
+.unit-4-icon {
+  font-size: 2.2rem;
+  /* Adjust the size as needed */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unit-4-icon i {
+  font-size: inherit;
+}
+
+.unit-4-icon {
+  width: 80px;
+  /* Optional: Set width for consistency */
+  height: 80px;
+  /* Optional: Set height for consistency */
+  color: #007bff;
+  /* Ensure icon color stands out */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  /* Spacing between icon and text */
+}
+
+
 .unit-4 h3 {
   font-size: 20px;
 }
@@ -2000,4 +2028,3 @@ h5,
   vertical-align: middle;
   /* margin: 0 5px;  */
 }
-

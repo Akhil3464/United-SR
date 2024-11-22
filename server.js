@@ -62,7 +62,7 @@ app.post('/get-quote', async (req, res) => {
     
     Warm regards,  
     **United SR Logistics Team**  
-    🌐 [www.unitedsrlogistics.com](http://www.unitedsrlogistics.com) | 📧 support@unitedsrlogistics.com
+    🌐 [www.unitedsrlogistics.com](https://www.unitedsrlogistics.com) | 📧 unitedsrlogistics@gmail.com
     `;
 
     const transporter = nodemailer.createTransport({
@@ -100,8 +100,8 @@ app.post('/get-quote', async (req, res) => {
                     <strong>United SR Logistics Team</strong><br>
                 </p>
                 <footer style="margin-top: 20px; font-size: 12px; color: #555;">
-                    🌐 <a href="http://www.unitedsrlogistics.com" style="color: #2d89ef;">www.unitedsrlogistics.com</a><br />
-                    📧 support@unitedsrlogistics.com
+                    🌐 <a href="https://www.unitedsrlogistics.com" style="color: #2d89ef;">www.unitedsrlogistics.com</a><br />
+                    📧 unitedsrlogistics@gmail.com
                 </footer>
             </div>
         `,
@@ -118,6 +118,66 @@ app.post('/get-quote', async (req, res) => {
     }
 
 });
+app.post('/contact-form', async (req, res) => {
+    const { fname, lname, email, subject, message } = req.body;
+
+    console.log('Form Data:', fname, lname, email, subject, message);
+
+    try {
+        // Configure nodemailer transporter
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+            },
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: process.env.EMAIL, // Your email address
+            subject: `📩 New Contact Form Submission: ${subject}`,
+            text: `
+            Name: ${fname} ${lname}
+            Email: ${email}
+            Subject: ${subject}
+            Message: ${message}
+            `,
+            html: `
+                <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                    <h2 style="text-align: center; color: #4CAF50;">📩 New Contact Form Submission</h2>
+                    <hr style="margin: 20px 0; border: 1px solid #eee;">
+                    
+                    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                        <strong>Name:</strong> ${fname} ${lname}<br>
+                        <strong>Email:</strong> <a href="mailto:${email}" style="color: #4CAF50;">${email}</a><br>
+                        <strong>Subject:</strong> ${subject}<br>
+                        <strong>Message:</strong><br>
+                        ${message}
+                    </p>
+
+                    <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                    <footer style="text-align: center; font-size: 14px; color: #555;">
+                        <p>⚡ This message was submitted through the Contact Form on your website.</p>
+                        <p><strong>Powered by Your Website</strong></p>
+                    </footer>
+                </div>
+            `,
+        };
+
+        // Send the email
+        await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully');
+
+        // Redirect back to contact page with success message
+        res.redirect('/contact');
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ error: 'Failed to send the message.' });
+    }
+});
+
 
 // Handle 404 error for undefined routes
 app.use((req, res) => {
