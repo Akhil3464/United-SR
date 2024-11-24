@@ -42,7 +42,7 @@ app.post('/get-quote', async (req, res) => {
     fq_name = fq_name || "Customer";
     console.log(fq_email, fq_name);
 
-    // Predefined quotes with long styled message
+    // Updated quote without tracking or offers, emphasizing features and advantages
     const quote = `
     🚀 **United SR Logistics**: Where Speed Meets Reliability 🚀
     
@@ -50,16 +50,14 @@ app.post('/get-quote', async (req, res) => {
     
     Thank you for considering **United SR Logistics** for your international courier needs. We are dedicated to providing **top-tier logistics solutions** tailored to your requirements.
     
-    🌟 **Here’s what sets us apart:**  
-    - 🏠 **Door-to-Door International Delivery**: Seamless pickups and drop-offs.  
-    - ✈️ **Express Air Freight Services**: Faster deliveries, no matter the distance.  
-    - 📦 **Secure Packaging Solutions**: Protection for every parcel.  
-    - 📍 **Live Shipment Tracking**: Real-time updates at your fingertips.
+    🌟 **Why Choose United SR Logistics?**  
+    - 🏠 **Comprehensive Door-to-Door Services**: Effortless pickups and deliveries, ensuring convenience and reliability.  
+    - ✈️ **Global Express Shipping**: Fast, efficient air freight services to meet your time-critical requirements.  
+    - 📦 **Advanced Packaging Solutions**: Protecting your shipments with the highest safety standards.  
+    - 🤝 **Personalized Customer Support**: Dedicated professionals to assist you at every step.  
+    - 🌍 **Global Expertise**: Seamless international shipping powered by years of experience.
     
-    🎉 **Exclusive Offer for You**:  
-    Ship now and enjoy **20% off** on shipments over 50kg, plus **free pickup** services. This limited-time offer ensures your shipments are handled with care and efficiency at the best rates.
-    
-    Your trust drives our commitment to excellence. Let's get your shipment moving today!  
+    At **United SR Logistics**, we prioritize your needs with our commitment to excellence. Let's move your shipment with care and efficiency today!
     
     Warm regards,  
     **United SR Logistics Team**  
@@ -89,14 +87,13 @@ app.post('/get-quote', async (req, res) => {
                     🚀 <strong>United SR Logistics</strong>: Your Trusted International Courier Partner 🚀<br><br>
                     Hello <strong>${fq_name}</strong>,<br><br>
                     Thank you for considering <strong>United SR Logistics</strong> for your courier needs. We specialize in delivering excellence for every shipment.<br><br>
-                    🌟 <strong>Here’s what sets us apart:</strong><br>
-                    🏠 <strong>Door-to-Door International Delivery</strong>: Seamless pickups and drop-offs.<br>
-                    ✈️ <strong>Express Air Freight Services</strong>: Faster deliveries, no matter the distance.<br>
-                    📦 <strong>Secure Packaging Solutions</strong>: Protection for every parcel.<br>
-                    📍 <strong>Live Shipment Tracking</strong>: Real-time updates at your fingertips.<br><br>
-                    🎉 <strong>Exclusive Offer for You:</strong><br>
-                    Ship now and enjoy <strong>20% off</strong> on shipments over 50kg, plus <strong>free pickup</strong> services.<br><br>
-                    Your trust drives our commitment to excellence. Let's get your shipment moving today!<br><br>
+                    🌟 <strong>Why Choose United SR Logistics?</strong><br>
+                    🏠 <strong>Comprehensive Door-to-Door Services</strong>: Effortless pickups and deliveries, ensuring convenience and reliability.<br>
+                    ✈️ <strong>Global Express Shipping</strong>: Fast, efficient air freight services to meet your time-critical requirements.<br>
+                    📦 <strong>Advanced Packaging Solutions</strong>: Protecting your shipments with the highest safety standards.<br>
+                    🤝 <strong>Personalized Customer Support</strong>: Dedicated professionals to assist you at every step.<br>
+                    🌍 <strong>Global Expertise</strong>: Seamless international shipping powered by years of experience.<br><br>
+                    At <strong>United SR Logistics</strong>, we prioritize your needs with our commitment to excellence. Let's move your shipment with care and efficiency today!<br><br>
                     Warm regards,<br>
                     <strong>United SR Logistics Team</strong><br>
                 </p>
@@ -117,8 +114,8 @@ app.post('/get-quote', async (req, res) => {
         console.error('Error sending email:', error);
         res.status(500).send('Failed to send quote. Please try again later.');
     }
-
 });
+
 app.post('/contact-form', async (req, res) => {
     const { fname, lname, email, subject, message } = req.body;
 
