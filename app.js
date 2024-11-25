@@ -79,7 +79,7 @@ app.post('/get-quote', async (req, res) => {
         text: quote, // Plain-text version
         html: `
             <div style="text-align: center; font-family: Arial, sans-serif;">
-                <img src="https://res.cloudinary.com/stayease/image/upload/v1732177066/Profile%20images/united_sr_final_png_ybwuwa.png" alt="United SR Logistics Logo" style="max-width: 200px; margin-bottom: 20px;" />
+                <img src="https://res.cloudinary.com/stayease/image/upload/v1732534408/Profile%20images/logo_czfund.png" alt="United SR Logistics Logo" style="max-width: 200px; margin-bottom: 20px;" />
                 <h1 style="color: #2d89ef;">United SR Logistics</h1>
                 <p style="font-size: 16px; color: #333;">Where Speed Meets Reliability</p>
                 <hr style="border: 1px solid #ddd; margin: 20px 0;" />
