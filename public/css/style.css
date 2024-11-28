@@ -2028,3 +2028,102 @@ h5,
   vertical-align: middle;
   /* margin: 0 5px;  */
 }
+.tooltip-container {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons horizontally */
+  justify-content: flex-start; /* Align vertically with minimal spacing */
+  z-index: 1000;
+  background-color: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding around the buttons */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Soft shadow effect on hover */
+
+}
+
+.tooltip-container .btn {
+  width: 50px; /* Square button with a width of 50px */
+  height: 50px; /* Set height to match the width for a square */
+  display: flex;
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  margin: 5px 0; /* Reduced vertical margin between buttons */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #5c9fae; /* Soft teal color for the button */
+  color: #fff; /* Icon color */
+  border: none; /* Remove borders */
+  font-size: 20px; /* Icon size */
+}
+
+.tooltip-container .btn:hover {
+  background-color: #4b8680; /* Darker shade on hover */
+}
+.tooltip-container .btn a {
+  color: #fff; /* Ensure the icon inside the <a> is white */
+  text-decoration: none; /* Remove default link underline */
+  display: flex; /* Make sure <a> behaves like a block element inside the button */
+  align-items: center; /* Align the icon in the middle */
+  justify-content: center; /* Center the icon inside the link */
+}
+
+.tooltip-container .tooltip-text {
+  display: none; /* Hide text by default */
+}
+
+.tooltip-container .btn:hover .tooltip-text {
+  display: block; /* Show text when button is hovered */
+  position: absolute;
+  bottom: 60px; /* Position the text above the button */
+  background-color: #333; /* Dark background for text */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px; /* Smaller tooltip text */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.tooltip-container .btn i {
+  font-size: 20px; /* Icon size */
+}
+
+/* Vertical Text Button Style */
+.tooltip-container .btn-vertical-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f3a832; /* Color for "Contact Us" button */
+  border-radius: 8px;
+  font-size: 10px; /* Smaller text for vertical buttons */
+  font-weight: bold;
+  color: #fff;
+  transform: rotate(-90deg); /* Rotate the text vertically */
+  transform-origin: center center; /* Adjust the origin of rotation to the center */
+  margin: 5px 0; /* Reduced margin to minimize distance between vertical button and others */
+}
+
+.tooltip-container .btn-vertical-text i {
+  font-size: 18px; /* Smaller icon size for "Contact Us" */
+  transform: rotate(90deg); /* Rotate the icon vertically */
+  margin-right: 5px; /* Space between icon and text */
+  display: flex;
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+}
+
+/* Ensuring icons-only buttons don't have text */
+.tooltip-container .btn span {
+  display: none; /* Hide text in icon-only buttons */
+}
+
+/* Ensure all buttons are aligned */
+.tooltip-container .btn,
+.tooltip-container .btn-vertical-text {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}

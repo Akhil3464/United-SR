@@ -3,8 +3,10 @@
 
 <head>
   <title>International Cargo - United Sr Logistics </title>
-  <meta name="description" content="United Sr Logistics is a global supplier of transport and logistics solutions. We have offices in more than 20 countries and an international network of partners and agents.">
-  <meta name="keywords" content="logistics, cargo, courier, international shipping, transportation, global logistics, United Sr Logistics">
+  <meta name="description"
+    content="United Sr Logistics is a global supplier of transport and logistics solutions. We have offices in more than 20 countries and an international network of partners and agents.">
+  <meta name="keywords"
+    content="logistics, cargo, courier, international shipping, transportation, global logistics, United Sr Logistics">
   <meta name="author" content="United Sr Logistics">
   <link rel="icon" href="/images/logo.ico" type="image/x-icon">
 
@@ -29,17 +31,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flaticon/3.1.0/font/flaticon.css">
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+
+
 
 </head>
 
 <body>
 
   <div class="site-wrap">
-
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -100,14 +104,26 @@
 
         <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
           <h1 class="text-white font-weight-light text-uppercase font-weight-bold">International Cargo</h1>
-          <p class="breadcrumb-custom"><a href="/">Home</a> <span class="mx-2">&gt;</span> <span>International Cargo</span></p>
+          <p class="breadcrumb-custom"><a href="/">Home</a> <span class="mx-2">&gt;</span> <span>International
+              Cargo</span></p>
         </div>
       </div>
     </div>
   </div>
 
-
-
+  <div class="tooltip-container" data-aos="fade-up">
+    <button type="button" class="btn btn-secondary btn-vertical-text" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Email Us">
+      <a href="mailto:unitedsrlogistics@gmail.com">  <i class="fas fa-envelope"></i> </a>
+    </button>
+    <button type="button" class="btn btn-secondary " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Contact Us">
+      <a href="https://wa.me/message/YDSGZWGP7DBGK1"><i class="fab fa-whatsapp"></i> </a>
+    </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Support">
+      <a href="tel:+918921229191"> <i class="fas fa-phone"></i> </a>
+    </button>
+  </div>
+  
+  
   <div class="site-section">
     <div class="container">
       <div class="row mb-5">
@@ -119,7 +135,7 @@
             <h2 class="text-primary">Air Freight Services</h2>
           </div>
           <p>
-            For urgent shipments or delicate goods, our air freight services are the perfect solution. 
+            For urgent shipments or delicate goods, our air freight services are the perfect solution.
             We deliver speed, efficiency, and reliability for your time-sensitive cargo.
           </p>
           <p><strong>Key Features of Our Air Freight Services:</strong></p>
@@ -144,7 +160,7 @@
             <h2 class="text-primary">Ocean Freight Services</h2>
           </div>
           <p>
-            Need to transport large quantities or heavy goods? Our ocean freight services offer 
+            Need to transport large quantities or heavy goods? Our ocean freight services offer
             efficient, cost-effective, and sustainable shipping options globally.
           </p>
           <p><strong>Key Features of Our Ocean Freight Services:</strong></p>
@@ -162,8 +178,8 @@
     </div>
   </div>
 
-  
-  
+
+
 
   <footer class="site-footer">
     <div class="container">
@@ -255,6 +271,14 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
+
+   <!-- Bootstrap 5 JS and Tooltip Initialization -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+     // Initialize all tooltips
+     var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+     var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+   </script>
 
 </body>
 
