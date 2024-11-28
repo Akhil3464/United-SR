@@ -2129,15 +2129,11 @@ h5,
 }
 
 
-
-.partner-section {
-  /* background-color: #f9f9f9; */
-}
-
 .scrolling-logos {
   position: relative;
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto; /* Enable manual scrolling */
+  white-space: nowrap; /* Keep logos in one line for scrolling */
+  scroll-behavior: smooth; /* Smooth manual scrolling */
 }
 
 .logos {
@@ -2146,11 +2142,16 @@ h5,
   justify-content: center;
   gap: 30px; /* Adjust spacing between logos */
   animation: scroll 25s linear infinite;
+  will-change: transform; /* Improve performance for animation */
 }
 
 .partner-logo {
   height: 60px; /* Adjust logo size */
   object-fit: contain;
+}
+
+.scrolling-logos::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for cleaner UI */
 }
 
 @keyframes scroll {
