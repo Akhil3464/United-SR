@@ -2127,3 +2127,37 @@ h5,
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
 }
+
+
+
+.partner-section {
+  /* background-color: #f9f9f9; */
+}
+
+.scrolling-logos {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; /* Adjust spacing between logos */
+  animation: scroll 25s linear infinite;
+}
+
+.partner-logo {
+  height: 60px; /* Adjust logo size */
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
