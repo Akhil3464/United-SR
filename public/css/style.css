@@ -2177,7 +2177,7 @@ h5,
   top: 190px; /* Adjust based on the button position */
   left: 65px; /* Adjust based on the button's position */
   max-width: 0;
-  width: 250px; /* Set the maximum width it will expand to */
+  width: 300px; /* Set the maximum width it will expand to */
   height: auto; /* Adjust based on your form height */
   overflow: hidden;
   z-index: 100000;
@@ -2191,7 +2191,7 @@ h5,
 }
 
 .contact-form-container.show {
-  max-width: 250px; /* Target max width when expanded */
+  max-width: 300px; /* Target max width when expanded */
   opacity: 1; /* Fade in effect */
   pointer-events: auto; /* Allow interaction */
 }
