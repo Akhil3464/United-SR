@@ -99,10 +99,11 @@
   </header>
 
 
+  <!-- ToolTip -->
+
   <div class="tooltip-container" data-aos="fade-up">
-    <button type="button" class="btn btn-secondary btn-vertical-text" data-bs-toggle="tooltip" data-bs-placement="top"
-      data-bs-title="Email Us">
-      <a href="mailto:unitedsrlogistics@gmail.com"> <i class="fas fa-envelope"></i> </a>
+    <button type="button" class="btn btn-secondary btn-vertical-text" id="emailUsButton">
+      <i class="fas fa-envelope"></i>
     </button>
     <button type="button" class="btn btn-secondary " data-bs-toggle="tooltip" data-bs-placement="right"
       data-bs-title="Contact Us">
@@ -113,6 +114,50 @@
       <a href="tel:+918921229191"> <i class="fas fa-phone"></i> </a>
     </button>
   </div>
+
+  <!-- Contact Form -->
+  <div id="contactForm" class="contact-form-container">
+    <form action="/contact-form" method="post" class="p-4 bg-white">
+      <div class="form-group text-center">
+        <p class="text-black">Contact Form</p> <!-- Form Heading -->
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="text" id="fname" name="fname" class="form-control" placeholder="Name" required>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="tel" id="number" name="number" class="form-control" placeholder="Number" required>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <textarea name="message" id="message" rows="4" class="form-control" placeholder="Your message..."
+            required></textarea>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="submit" value="Send" class="btn btn-primary py-2 px-4 text-white w-100">
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
 
   <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_1.jpg);"
     data-aos="fade" data-stellar-background-ratio="0.5">
@@ -293,7 +338,54 @@
       var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
       var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     </script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+   const emailUsButton = document.getElementById("emailUsButton");
+   const contactForm = document.getElementById("contactForm");
+ 
+   // Handle click toggle
+   emailUsButton.addEventListener("click", () => {
+     contactForm.classList.toggle("show");
+   });
+ 
+   // Handle hover
+   emailUsButton.addEventListener("mouseenter", () => {
+     contactForm.classList.add("show");
+   });
+ 
+   emailUsButton.addEventListener("mouseleave", () => {
+     setTimeout(() => {
+       if (!contactForm.matches(":hover") && !contactForm.querySelector(":focus")) {
+         contactForm.classList.remove("show");
+       }
+     }, 200); // Delay to allow moving between button and form
+   });
+ 
+   contactForm.addEventListener("mouseleave", () => {
+     // Only hide the form if there is no active focus in the form
+     if (!contactForm.querySelector(":focus")) {
+       contactForm.classList.remove("show");
+     }
+   });
+ 
+   // Prevent form from disappearing when focus is inside an input field
+   contactForm.querySelectorAll("input, textarea").forEach((input) => {
+     input.addEventListener("focus", () => {
+       contactForm.classList.add("show"); // Keep the form visible when focusing on an input
+     });
+ 
+     input.addEventListener("blur", () => {
+       // Optionally, you can remove the form visibility when losing focus (if desired)
+       setTimeout(() => {
+         if (!contactForm.querySelector(":focus")) {
+           contactForm.classList.remove("show");
+         }
+       }, 200); // Optional delay to prevent accidental hiding
+     });
+   });
+ });
+ 
+   </script>
 </body>
 
 </html>

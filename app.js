@@ -171,7 +171,8 @@ app.post('/contact-form', async (req, res) => {
         console.log('Email sent successfully');
 
         // Redirect back to contact page with success message
-        res.redirect('/contact');
+        console.log(req.get('referer'))
+        res.redirect(req.get('referer') || '/'); // Default to '/' if there's no referer
     } catch (error) {
         console.error('Error sending email:', error);
         res.status(500).json({ error: 'Failed to send the message.' });

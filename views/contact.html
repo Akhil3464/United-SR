@@ -321,6 +321,55 @@
       var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+ const emailUsButton = document.getElementById("emailUsButton");
+ const contactForm = document.getElementById("contactForm");
+
+ // Handle click toggle
+ emailUsButton.addEventListener("click", () => {
+   contactForm.classList.toggle("show");
+ });
+
+ // Handle hover
+ emailUsButton.addEventListener("mouseenter", () => {
+   contactForm.classList.add("show");
+ });
+
+ emailUsButton.addEventListener("mouseleave", () => {
+   setTimeout(() => {
+     if (!contactForm.matches(":hover") && !contactForm.querySelector(":focus")) {
+       contactForm.classList.remove("show");
+     }
+   }, 200); // Delay to allow moving between button and form
+ });
+
+ contactForm.addEventListener("mouseleave", () => {
+   // Only hide the form if there is no active focus in the form
+   if (!contactForm.querySelector(":focus")) {
+     contactForm.classList.remove("show");
+   }
+ });
+
+ // Prevent form from disappearing when focus is inside an input field
+ contactForm.querySelectorAll("input, textarea").forEach((input) => {
+   input.addEventListener("focus", () => {
+     contactForm.classList.add("show"); // Keep the form visible when focusing on an input
+   });
+
+   input.addEventListener("blur", () => {
+     // Optionally, you can remove the form visibility when losing focus (if desired)
+     setTimeout(() => {
+       if (!contactForm.querySelector(":focus")) {
+         contactForm.classList.remove("show");
+       }
+     }, 200); // Optional delay to prevent accidental hiding
+   });
+ });
+});
+
+ </script>
+
 </body>
 
 </html>
