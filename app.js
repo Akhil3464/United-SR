@@ -149,6 +149,7 @@ app.post('/contact-form', async (req, res) => {
                     
                     <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
                         <strong>Name:</strong> ${fname}<br>
+                        <strong>Phone:</strong> <a href="tel:${number}" style="color: #4CAF50;">${number}</a><br>
                         <strong>Email:</strong> <a href="mailto:${email}" style="color: #4CAF50;">${email}</a><br>
                         <strong>Subject:</strong> ${subject}<br>
                         <strong>Message:</strong><br>
