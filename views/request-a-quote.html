@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Not Found - United Sr Logistics </title>
+  <title>Request A Quote - United Sr Logistics </title>
   <meta name="description" content="United Sr Logistics is a global supplier of transport and logistics solutions. We have offices in more than 20 countries and an international network of partners and agents.">
   <meta name="keywords" content="logistics, cargo, courier, international shipping, transportation, global logistics, United Sr Logistics">
   <meta name="author" content="United Sr Logistics">
@@ -77,6 +77,12 @@
                 </li>
                 <li><a href="/industries">Industries</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li>
+                    <a href="/request-a-quote" class="btn btn-sm btn-primary text-white px-5 py-1 ml-2"
+                      style="border-radius: 5px;">
+                      Quote
+                    </a>
+                  </li>
               </ul>
             </nav>
           </div>
@@ -114,27 +120,74 @@
       <div class="row align-items-center justify-content-center text-center">
 
         <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-          <h1 class="text-white font-weight-light text-uppercase font-weight-bold">404</h1>
-          <p class="breadcrumb-custom"><a href="/">Home</a> <span class="mx-2">&gt;</span> <span>404</span></p>
+          <h1 class="text-white font-weight-light text-uppercase font-weight-bold">Request a Quote</h1>
+          <p class="breadcrumb-custom"><a href="/">Home</a> <span class="mx-2">&gt;</span> <span>Request a Quote</span></p>
         </div>
       </div>
     </div>
   </div>
-
-
-
   <div class="site-section">
-    <div class="container text-center">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-md-6" data-aos="fade-up">
-          <img src="images/logo.png" alt="United SR Logistics Logo" class="img-fluid mb-4" style="max-width: 200px;">
-          <h1 class="text-primary font-weight-bold">404</h1>
-          <p class="mb-4">Oops! The page you are looking for doesn't exist.</p>
-          <a href="/" class="btn btn-primary px-4 py-2">Go Back Home</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-section p-5" data-aos="fade-up" style="background: linear-gradient(to right, #fa5c5c, #7c2929); border-radius: 10px;">
+            <h2 class="text-white mb-4 font-weight-bold text-center">Request a Quote</h2>
+            <p class="text-light mb-5 text-center">
+              Provide your courier details, and we’ll send you a customized quote promptly.
+            </p>
+            <form method="post" action="/request-quote" class="text-white">
+              <div class="row mb-4">
+                <!-- Name -->
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <!-- Email -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <!-- Phone -->
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="+1 234 567 890" required>
+                </div>
+                <!-- Origin City -->
+                <div class="col-md-6">
+                  <label for="origin" class="form-label">Origin City</label>
+                  <input type="text" class="form-control" id="origin" name="origin" placeholder="City of origin" required>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <!-- Delivery City -->
+                <div class="col-md-6">
+                  <label for="delivery" class="form-label">Delivery City</label>
+                  <input type="text" class="form-control" id="delivery" name="delivery" placeholder="City of delivery" required>
+                </div>
+                <!-- Weight -->
+                <div class="col-md-6">
+                  <label for="weight" class="form-label">Courier Weight (kg)</label>
+                  <input type="number" class="form-control" id="weight" name="weight" placeholder="e.g., 5" required>
+                </div>
+              </div>
+              <!-- Message -->
+              <div class="mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Additional details about your courier" required></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-light btn-lg px-5 py-2" style="border-radius: 50px;">Submit Request</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  
   
   <footer class="site-footer">
     <div class="container">
@@ -149,12 +202,6 @@
                   <li><a href="/services">Services</a></li>
                   <li><a href="/industries">Industries</a></li>
                   <li><a href="/contact">Contact Us</a></li>
-                  <li>
-                    <a href="/request-a-quote" class="btn btn-sm btn-primary text-white px-5 py-1 ml-2"
-                      style="border-radius: 5px;">
-                      Quote
-                    </a>
-                  </li>
                 </ul>
               </ul>
             </div>

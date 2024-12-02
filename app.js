@@ -178,6 +178,73 @@ app.post('/contact-form', async (req, res) => {
     }
 });
 
+app.post('/request-quote', async (req, res) => {
+    const { name, email, phone, origin, delivery, weight, message } = req.body;
+
+    console.log('Quote Request Data:', name, email, phone, origin, delivery, weight, message);
+
+    try {
+        // Configure nodemailer transporter
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+            },
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: process.env.EMAIL, // Your email address
+            subject: `🚚 New Quote Request from ${name}`,
+            text: `
+            Name: ${name}
+            Phone: ${phone}
+            Email: ${email}
+            Origin City: ${origin}
+            Delivery City: ${delivery}
+            Courier Weight: ${weight} kg
+            Message: ${message}
+            `,
+            html: `
+                <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                    <h2 style="text-align: center; color: #4CAF50;">🚚 New Quote Request</h2>
+                    <hr style="margin: 20px 0; border: 1px solid #eee;">
+                    
+                    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                        <strong>Name:</strong> ${name}<br>
+                        <strong>Phone:</strong> <a href="tel:${phone}" style="color: #4CAF50;">${phone}</a><br>
+                        <strong>Email:</strong> <a href="mailto:${email}" style="color: #4CAF50;">${email}</a><br>
+                        <strong>Origin City:</strong> ${origin}<br>
+                        <strong>Delivery City:</strong> ${delivery}<br>
+                        <strong>Courier Weight:</strong> ${weight} kg<br>
+                        <strong>Message:</strong><br>
+                        ${message}
+                    </p>
+
+                    <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                    <footer style="text-align: center; font-size: 14px; color: #555;">
+                        <p>⚡ This quote request was submitted through the United SR Logistics website.</p>
+                        <p><strong>Powered by Adithyan</strong></p>
+                    </footer>
+                </div>
+            `,
+        };
+
+        // Send the email
+        await transporter.sendMail(mailOptions);
+        console.log('Quote request email sent successfully');
+
+        // Redirect back to quote page with success message
+        res.redirect('/request-a-quote');
+    } catch (error) {
+        console.error('Error sending quote request email:', error);
+        res.status(500).json({ error: 'Failed to send the quote request.' });
+    }
+});
+
+
 
 // Start the server
 app.listen(PORT, () => {
