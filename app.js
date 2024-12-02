@@ -117,9 +117,9 @@ app.post('/get-quote', async (req, res) => {
 });
 
 app.post('/contact-form', async (req, res) => {
-    const { fname, lname, email, subject, message } = req.body;
+    const { fname, number, email, subject, message } = req.body;
 
-    console.log('Form Data:', fname, lname, email, subject, message);
+    console.log('Form Data:', fname, number, email, subject, message);
 
     try {
         // Configure nodemailer transporter
@@ -136,7 +136,8 @@ app.post('/contact-form', async (req, res) => {
             to: process.env.EMAIL, // Your email address
             subject: `📩 New Contact Form Submission: ${subject}`,
             text: `
-            Name: ${fname} ${lname}
+            Name: ${fname}
+            Phone: ${number}
             Email: ${email}
             Subject: ${subject}
             Message: ${message}
@@ -147,7 +148,7 @@ app.post('/contact-form', async (req, res) => {
                     <hr style="margin: 20px 0; border: 1px solid #eee;">
                     
                     <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-                        <strong>Name:</strong> ${fname} ${lname}<br>
+                        <strong>Name:</strong> ${fname}<br>
                         <strong>Email:</strong> <a href="mailto:${email}" style="color: #4CAF50;">${email}</a><br>
                         <strong>Subject:</strong> ${subject}<br>
                         <strong>Message:</strong><br>
@@ -157,8 +158,8 @@ app.post('/contact-form', async (req, res) => {
                     <hr style="margin: 20px 0; border: 1px solid #eee;">
 
                     <footer style="text-align: center; font-size: 14px; color: #555;">
-                        <p>⚡ This message was submitted through the Contact Form on your website.</p>
-                        <p><strong>Powered by Your Website</strong></p>
+                        <p>⚡ This message was submitted through the Contact Form on United SR Logistics.</p>
+                        <p><strong>Powered by Adithyan</strong></p>
                     </footer>
                 </div>
             `,
