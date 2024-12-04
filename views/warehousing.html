@@ -134,7 +134,7 @@
   <div id="contactForm" class="contact-form-container">
     <form action="/contact-form" method="post" class="p-4 bg-white">
       <div class="form-group text-center">
-        <p class="text-black">Contact Form</p> <!-- Form Heading -->
+        <!-- <p class="text-black">Contact Form</p> Form Heading -->
       </div>
       <div class="row form-group">
         <div class="col-md-12">
@@ -315,55 +315,79 @@
     var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
   </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".site-navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) { // Adjust threshold as needed
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  });
+
+</script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const emailUsButton = document.getElementById("emailUsButton");
       const contactForm = document.getElementById("contactForm");
 
-      // Handle click toggle
-      emailUsButton.addEventListener("click", () => {
+      // Function to toggle visibility of the contact form
+      const toggleContactForm = () => {
         contactForm.classList.toggle("show");
-      });
+      };
 
-      // Handle hover
-      emailUsButton.addEventListener("mouseenter", () => {
+      // Function to show the contact form
+      const showContactForm = () => {
         contactForm.classList.add("show");
+      };
+
+      // Function to hide the contact form
+      const hideContactForm = () => {
+        contactForm.classList.remove("show");
+      };
+
+      // Handle click and touchstart toggle
+      emailUsButton.addEventListener("click", toggleContactForm);
+      emailUsButton.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // Prevent default behavior to avoid double click issue
+        toggleContactForm();
       });
 
+      // Handle hover for desktop
+      emailUsButton.addEventListener("mouseenter", showContactForm);
       emailUsButton.addEventListener("mouseleave", () => {
         setTimeout(() => {
           if (!contactForm.matches(":hover") && !contactForm.querySelector(":focus")) {
-            contactForm.classList.remove("show");
+            hideContactForm();
           }
-        }, 200); // Delay to allow moving between button and form
+        }, 100); // Delay to allow smooth transition
       });
 
       contactForm.addEventListener("mouseleave", () => {
-        // Only hide the form if there is no active focus in the form
         if (!contactForm.querySelector(":focus")) {
-          contactForm.classList.remove("show");
+          hideContactForm();
         }
       });
 
       // Prevent form from disappearing when focus is inside an input field
       contactForm.querySelectorAll("input, textarea").forEach((input) => {
-        input.addEventListener("focus", () => {
-          contactForm.classList.add("show"); // Keep the form visible when focusing on an input
-        });
-
+        input.addEventListener("focus", showContactForm);
         input.addEventListener("blur", () => {
-          // Optionally, you can remove the form visibility when losing focus (if desired)
           setTimeout(() => {
             if (!contactForm.querySelector(":focus")) {
-              contactForm.classList.remove("show");
+              hideContactForm();
             }
-          }, 200); // Optional delay to prevent accidental hiding
+          }, 100); // Optional delay to prevent accidental hiding
         });
       });
     });
 
   </script>
+
 </body>
 
 </html>
