@@ -655,12 +655,14 @@ h5,
 
 /* Default menu icon color */
 .site-menu-toggle .icon-menu {
-  color: #fff; /* Change to your desired color */
+  color: #fff;
+  /* Change to your desired color */
 }
 
 /* On hover */
 .site-navbar.scrolled .site-menu-toggle .icon-menu {
-  color: #000; /* Change to a hover color */
+  color: #000;
+  /* Change to a hover color */
 }
 
 
@@ -2070,14 +2072,14 @@ h5,
 
 .tooltip-container {
   position: fixed;
-  top: 35%;
+  top: 30%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   /* Center buttons horizontally */
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   /* Align vertically with minimal spacing */
   z-index: 1000;
   background-color: transparent;
@@ -2092,16 +2094,18 @@ h5,
 }
 
 .tooltip-container .btn {
-  width: 50px;
+  width: 40px;
   /* Square button with a width of 50px */
-  height: 50px;
+  height: 40px;
   /* Set height to match the width for a square */
   display: flex;
   align-items: center;
   /* Vertically center the icon */
   justify-content: center;
   /* Horizontally center the icon */
-  margin: 5px 0;
+  padding: 10px;
+  margin: 5px 0px;
+  /* margin-top: 5px; */
   /* Reduced vertical margin between buttons */
   border-radius: 8px;
   /* Rounded corners */
@@ -2111,7 +2115,7 @@ h5,
   /* Icon color */
   border: none;
   /* Remove borders */
-  font-size: 20px;
+  /* font-size: 20px; */
   /* Icon size */
 }
 
@@ -2164,16 +2168,17 @@ h5,
 .tooltip-container .btn-vertical-text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  height:130px;
   padding: 10px;
   background-color: #f3a832;
   /* Color for "Contact Us" button */
   border-radius: 8px;
-  font-size: 10px;
   /* Smaller text for vertical buttons */
   font-weight: bold;
   color: #fff;
-  transform: rotate(-90deg);
+  transform: rotate(-180deg);
   /* Rotate the text vertically */
   transform-origin: center center;
   /* Adjust the origin of rotation to the center */
@@ -2182,11 +2187,10 @@ h5,
 }
 
 .tooltip-container .btn-vertical-text i {
-  font-size: 18px;
+  font-size: 15px;
   /* Smaller icon size for "Contact Us" */
   transform: rotate(90deg);
   /* Rotate the icon vertically */
-  margin-right: 5px;
   /* Space between icon and text */
   display: flex;
   justify-content: center;
@@ -2194,6 +2198,19 @@ h5,
   align-items: center;
   /* Center the icon vertically */
 }
+.tooltip-container .btn-vertical-text i span {
+  font-size: 8px;
+  /* Smaller icon size for "Contact Us" */
+  transform: rotate(0deg);
+  /* Rotate the icon vertically */
+  /* Space between icon and text */
+  display: flex;
+  justify-content: center;
+  /* Center the icon horizontally */
+  align-items: center;
+  /* Center the icon vertically */
+}
+
 
 /* Ensuring icons-only buttons don't have text */
 .tooltip-container .btn span {
