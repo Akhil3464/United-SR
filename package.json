@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+
+  "engines": {
+    "node": ">=22.21.1"
+  },
+
   "scripts": {
     "test": "nodemon app.js",
     "dev": "nodemon app.js"
