@@ -127,6 +127,7 @@ h5,
 
 .btn.btn-primary {
   border: 2px solid transparent;
+  z-index: 0;
 }
 
 .btn.btn-primary:hover {
