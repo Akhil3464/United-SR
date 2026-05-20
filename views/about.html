@@ -238,6 +238,137 @@
     </div>
   </div>
 
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-5" data-aos="fade">
+        <div class="col-md-7 text-center border-primary">
+          <h2 class="font-weight-light text-primary">OUR LEADERSHIP</h2>
+
+        </div>
+      </div>
+      <div class="row align-items-stretch team-section team-padding" data-aos="fade">
+        <!-- Team Section -->
+
+        <div>
+          <!-- Desktop View -->
+          <div class="row d-none d-md-flex justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-5 mb-4">
+              <div class="team-card">
+
+                <div class="team-image-wrapper">
+                  <img src="images/ranju.png" alt="Ranju John" class="team-image">
+                </div>
+
+                <div class="team-content">
+                  <h3>Ranju John</h3>
+                  <span class="designation">Founder</span>
+
+                  <p>
+                    Ranju brings a strong foundation in logistics with international work experience in the UK logistics
+                    sector. With practical exposure to global supply chain operations and warehouse management, he
+                    developed deep industry knowledge and operational expertise. While working in the UK, Ranju founded
+                    United SR with a vision to build a reliable, efficient, and globally connected logistics company
+                    driven by professionalism and customer trust.
+                  </p>
+
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-5 mb-4">
+              <div class="team-card">
+
+                <div class="team-image-wrapper">
+                  <img src="images/stephy.png" alt="Stephy Ranju" class="team-image">
+                </div>
+
+                <div class="team-content">
+                  <h3>Stephy Ranju</h3>
+                  <span class="designation">Founder</span>
+
+                  <p>
+                    Stephy plays a key role in the growth and branding of United SR, leading the company’s marketing and
+                    client communication initiatives. With a strong understanding of customer relations and business
+                    development, she focuses on building brand presence and maintaining lasting client partnerships. Her
+                    creative approach and strategic vision contribute significantly to the company’s professional
+                    identity and expanding global reach.
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mobile Carousel -->
+          <div id="teamCarousel" class="carousel slide d-md-none" data-bs-ride="carousel  ">
+
+            <div class="carousel-inner">
+
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="team-card mobile-card">
+
+                  <div class="team-image-wrapper">
+                    <img src="images/ranju.png" alt="Ranju John" class="team-image">
+                  </div>
+
+                  <div class="team-content">
+                    <h3>Ranju John</h3>
+                    <span class="designation">Founder</span>
+
+                    <p>
+                      Ranju brings a strong foundation in logistics with international work experience in the UK
+                      logistics sector. With practical exposure to global supply chain operations and warehouse
+                      management, he developed deep industry knowledge and operational expertise. While working in the
+                      UK, Ranju founded United SR with a vision to build a reliable, efficient, and globally connected
+                      logistics company driven by professionalism and customer trust.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="team-card mobile-card">
+
+                  <div class="team-image-wrapper">
+                    <img src="images/stephy.png" alt="Stephy Ranju" class="team-image">
+                  </div>
+
+                  <div class="team-content">
+                    <h3>Stephy Ranju</h3>
+                    <span class="designation">Founder</span>
+
+                    <p>
+                      Stephy plays a key role in the growth and branding of United SR, leading the company’s marketing
+                      and client communication initiatives. With a strong understanding of customer relations and
+                      business development, she focuses on building brand presence and maintaining lasting client
+                      partnerships. Her creative approach and strategic vision contribute significantly to the company’s
+                      professional identity and expanding global reach.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <div class="site-section bg-image overlay" style="background-image: url('images/hero_bg_4.jpg');">
     <div class="container">
       <div class="row justify-content-center mb-5">
@@ -730,6 +861,19 @@
       });
     });
 
+  </script>
+  <!-- Bootstrap Carousel Auto Slide -->
+  <script>
+    const myCarousel = document.querySelector('#teamCarousel');
+
+    if (myCarousel) {
+      new bootstrap.Carousel(myCarousel, {
+        interval: 2500,
+        ride: 'carousel',
+        pause: false,
+        wrap: true
+      });
+    }
   </script>
 
 

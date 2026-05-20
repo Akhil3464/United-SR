@@ -2518,6 +2518,13 @@ h5,
   margin: 0;
   font-weight: 500;
 }
+/* CHANGE TEXT COLORS ON HOVER */
+
+.team-card:hover .team-content h3,
+.team-card:hover .team-content p,
+.team-card:hover .designation {
+  color: #fff;
+}
 
 /* Hover */
 .tracking-card:hover {
@@ -2653,3 +2660,120 @@ h5,
     box-shadow: 0 8px 20px rgba(250, 92, 92, 0.4);
     color: #fff;
   }
+  /* TEAM SECTION */
+
+.team-section {
+  background: #f8f9fa;
+}
+
+.team-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111;
+}
+
+.team-subtitle {
+  color: #777;
+  font-size: 16px;
+}
+
+/* CARD */
+
+.team-card {
+  position: relative;
+  background: #fff;
+  border-radius: 0px 0px 20px 20px;
+  padding: 90px 30px 35px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  transition: 0.4s ease;
+  height: 100%;
+  overflow: visible;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #fa5c5c;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  background-color: #fa5c5c;
+}
+
+/* IMAGE */
+
+.team-image-wrapper {
+  position: absolute;
+  top: -77px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 160px;
+  border-radius: 35px;
+  overflow: hidden;
+  border: 8px solid #f8f9fa;
+  background: #fff;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.team-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.designation {
+  display: block;
+  color: #fa5c5c;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.team-content p {
+  color: #666;
+  line-height: 1.9;
+  font-size: 15px;
+}
+.team-padding{
+  padding-top: 4rem;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+.team-padding{
+  padding-top: 0rem;
+}
+  .team-card {
+    margin-top: 80px;
+    padding: 85px 20px 30px;
+  }
+
+  .team-title {
+    font-size: 30px;
+  }
+
+  .team-content h3 {
+    font-size: 24px;
+  }
+
+  .mobile-card {
+    margin: 80px 15px 20px;
+  }
+
+}
