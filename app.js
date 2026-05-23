@@ -160,7 +160,7 @@ app.post('/contact-form', async (req, res) => {
 
                     <footer style="text-align: center; font-size: 14px; color: #555;">
                         <p>⚡ This message was submitted through the Contact Form on United SR Logistics.</p>
-                        <p><strong>Powered by Adithyan</strong></p>
+                        <p><strong>Powered by Dyramuse Creativescape Pvt.Ltd.</strong></p>
                     </footer>
                 </div>
             `,
@@ -227,7 +227,7 @@ app.post('/request-quote', async (req, res) => {
 
                     <footer style="text-align: center; font-size: 14px; color: #555;">
                         <p>⚡ This quote request was submitted through the United SR Logistics website.</p>
-                        <p><strong>Powered by Adithyan</strong></p>
+                        <p><strong>Powered by Dyramuse Creativescape Pvt.Ltd.</strong></p>
                     </footer>
                 </div>
             `,
