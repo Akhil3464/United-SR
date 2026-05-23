@@ -65,12 +65,15 @@ app.post('/get-quote', async (req, res) => {
     `;
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD,
-        },
-    });
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+    },
+    connectionTimeout: 10000,
+});
 
     const mailOptions = {
         from: process.env.EMAIL,
@@ -107,6 +110,8 @@ app.post('/get-quote', async (req, res) => {
 
     try {
         // Send the email
+        await transporter.verify();
+console.log("SMTP server connected");
         await transporter.sendMail(mailOptions);
         console.log(`Email sent to ${fq_email}`);
         res.redirect('/');
@@ -123,13 +128,16 @@ app.post('/contact-form', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD,
-            },
-        });
+       const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+    },
+    connectionTimeout: 10000,
+});
 
         const mailOptions = {
             from: process.env.EMAIL,
@@ -167,6 +175,8 @@ app.post('/contact-form', async (req, res) => {
         };
 
         // Send the email
+        await transporter.verify();
+console.log("SMTP server connected");
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully');
 
@@ -186,13 +196,16 @@ app.post('/request-quote', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD,
-            },
-        });
+       const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+    },
+    connectionTimeout: 10000,
+});
 
         const mailOptions = {
             from: process.env.EMAIL,
@@ -234,6 +247,8 @@ app.post('/request-quote', async (req, res) => {
         };
 
         // Send the email
+        await transporter.verify();
+console.log("SMTP server connected");
         await transporter.sendMail(mailOptions);
         console.log('Quote request email sent successfully');
 
