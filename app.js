@@ -67,12 +67,17 @@ app.post('/get-quote', async (req, res) => {
     🌐 [www.unitedsrlogistics.com](http://www.unitedsrlogistics.com) | 📧 unitedsrlogistics@gmail.com
     `;
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
+ const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
+    tls: {
+        rejectUnauthorized: false
+    }
 });
 
     const mailOptions = {
@@ -126,12 +131,17 @@ app.post('/contact-form', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-     const transporter = nodemailer.createTransport({
-    service: "gmail",
+   const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
+    tls: {
+        rejectUnauthorized: false
+    }
 });
 
         const mailOptions = {
@@ -190,11 +200,16 @@ app.post('/request-quote', async (req, res) => {
     try {
         // Configure nodemailer transporter
     const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
+    tls: {
+        rejectUnauthorized: false
+    }
 });
 
         const mailOptions = {
