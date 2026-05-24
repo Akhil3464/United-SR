@@ -14,7 +14,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
-require('dotenv').config();
 
 // Serve static files from the "css", "js", "images", and "font" directories
 app.use('/scss', express.static(path.join(__dirname, 'scss')));
@@ -69,8 +68,8 @@ app.post('/get-quote', async (req, res) => {
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -132,8 +131,8 @@ app.post('/contact-form', async (req, res) => {
         // Configure nodemailer transporter
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -199,8 +198,8 @@ app.post('/request-quote', async (req, res) => {
         // Configure nodemailer transporter
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+secure: false,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
