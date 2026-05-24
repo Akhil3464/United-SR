@@ -1,7 +1,7 @@
 // Load express module
 require('dotenv').config();
 console.log("EMAIL:", process.env.EMAIL);
-console.log("PASSWORD:", process.env.PASSWORD ? "Loaded" : "Missing");
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -67,17 +67,14 @@ app.post('/get-quote', async (req, res) => {
     🌐 [www.unitedsrlogistics.com](http://www.unitedsrlogistics.com) | 📧 unitedsrlogistics@gmail.com
     `;
 
- const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
-    tls: {
-        rejectUnauthorized: false
-    }
 });
 
     const mailOptions = {
@@ -115,6 +112,8 @@ app.post('/get-quote', async (req, res) => {
 
     try {
         // Send the email
+        await transporter.verify();
+    console.log("SMTP Connected");
         await transporter.sendMail(mailOptions);
         console.log(`Email sent to ${fq_email}`);
         res.redirect('/');
@@ -131,17 +130,14 @@ app.post('/contact-form', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-   const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
-    tls: {
-        rejectUnauthorized: false
-    }
 });
 
         const mailOptions = {
@@ -180,6 +176,8 @@ app.post('/contact-form', async (req, res) => {
         };
 
         // Send the email
+        await transporter.verify();
+    console.log("SMTP Connected");
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully');
 
@@ -199,17 +197,14 @@ app.post('/request-quote', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-    const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
-    tls: {
-        rejectUnauthorized: false
-    }
 });
 
         const mailOptions = {
@@ -252,6 +247,8 @@ app.post('/request-quote', async (req, res) => {
         };
 
         // Send the email
+        await transporter.verify();
+    console.log("SMTP Connected");
         await transporter.sendMail(mailOptions);
         console.log('Quote request email sent successfully');
 
