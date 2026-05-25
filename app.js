@@ -67,9 +67,7 @@ app.post('/get-quote', async (req, res) => {
     `;
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-secure: false,
+    service: "gmail",
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -130,9 +128,7 @@ app.post('/contact-form', async (req, res) => {
     try {
         // Configure nodemailer transporter
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-secure: false,
+    service: "gmail",
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -196,10 +192,8 @@ app.post('/request-quote', async (req, res) => {
 
     try {
         // Configure nodemailer transporter
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-secure: false,
+const transporter = nodemailer.createTransport({
+    service: "gmail",
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -264,14 +258,12 @@ secure: false,
 app.get('/test-email', async (req, res) => {
     try {
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false,
-            auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD,
-            },
-        });
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+    },
+});
 
         await transporter.verify();
         console.log("SMTP Connected");
