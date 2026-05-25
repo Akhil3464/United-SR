@@ -260,8 +260,39 @@ secure: false,
 });
 
 
+// TEST ROUTE
+app.get('/test-email', async (req, res) => {
+    try {
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+            },
+        });
+
+        await transporter.verify();
+        console.log("SMTP Connected");
+
+        await transporter.sendMail({
+            from: process.env.EMAIL,
+            to: process.env.EMAIL,
+            subject: "Test Email",
+            text: "Railway email test successful",
+        });
+
+        res.send("Test email sent successfully!");
+    } catch (error) {
+        console.error(error);
+        res.send("Email failed: " + error.message);
+    }
+});
+
 
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
