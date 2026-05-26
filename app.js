@@ -67,7 +67,9 @@ app.post('/get-quote', async (req, res) => {
     `;
 
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // use TLS
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -128,7 +130,9 @@ app.post('/contact-form', async (req, res) => {
     try {
         // Configure nodemailer transporter
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // use TLS
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -193,7 +197,9 @@ app.post('/request-quote', async (req, res) => {
     try {
         // Configure nodemailer transporter
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // use TLS
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -258,7 +264,9 @@ const transporter = nodemailer.createTransport({
 app.get('/test-email', async (req, res) => {
     try {
         const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // use TLS
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
