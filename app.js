@@ -83,7 +83,7 @@ app.post('/contact-form', async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'United SR Logistics <onboarding@resend.dev>',
             to: process.env.EMAIL,
             subject: `📩 New Contact Form Submission: ${subject}`,
             html: `
@@ -97,9 +97,12 @@ app.post('/contact-form', async (req, res) => {
                         <strong>Subject:</strong> ${subject}<br>
                         <strong>Message:</strong><br>${message}
                     </p>
-                    <footer style="text-align: center; font-size: 14px; color: #555;">
-                        <p>Powered by Dyramuse Creativescape Pvt.Ltd.</p>
-                    </footer>
+                     <p style="text-align: center; font-size: 13px; color: #888;">
+                        ⚡ This quote request was submitted through the United SR Logistics website.
+                    </p>
+                    <p style="text-align: center; font-size: 13px; color: #555;">
+                        <strong>Powered by Dyramuse Creativescape Pvt.Ltd.</strong>
+                    </p>
                 </div>
             `,
         });
@@ -118,14 +121,14 @@ app.post('/request-quote', async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'United SR Logistics <onboarding@resend.dev>',
             to: process.env.EMAIL,
             subject: `🚚 New Quote Request from ${name}`,
             html: `
-                <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
                     <h2 style="text-align: center; color: #4CAF50;">🚚 New Quote Request</h2>
                     <hr style="margin: 20px 0; border: 1px solid #eee;">
-                    <p style="font-size: 16px; line-height: 1.6;">
+                    <p style="font-size: 16px; line-height: 1.8;">
                         <strong>Name:</strong> ${name}<br>
                         <strong>Phone:</strong> ${phone}<br>
                         <strong>Email:</strong> ${email}<br>
@@ -134,9 +137,13 @@ app.post('/request-quote', async (req, res) => {
                         <strong>Courier Weight:</strong> ${weight} kg<br>
                         <strong>Message:</strong><br>${message}
                     </p>
-                    <footer style="text-align: center; font-size: 14px; color: #555;">
-                        <p>Powered by Dyramuse Creativescape Pvt.Ltd.</p>
-                    </footer>
+                    <hr style="margin: 20px 0; border: 1px solid #eee;">
+                    <p style="text-align: center; font-size: 13px; color: #888;">
+                        ⚡ This quote request was submitted through the United SR Logistics website.
+                    </p>
+                    <p style="text-align: center; font-size: 13px; color: #555;">
+                        <strong>Powered by Dyramuse Creativescape Pvt.Ltd.</strong>
+                    </p>
                 </div>
             `,
         });
