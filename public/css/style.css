@@ -2678,6 +2678,60 @@ h5,
   font-size: 16px;
 }
 
+
+.location-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:15px 20px;
+    margin:20px 0;
+    text-decoration:none;
+    color:#fff;
+    max-width:250px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,107,107,.4);
+    border-radius:8px;
+
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.location-card:hover{
+    background:rgba(255,107,107,.12);
+    border-color:#ff6b6b;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(255,107,107,.15);
+}
+
+.location-card .fa-map-marker-alt{
+    color:#ff6b6b;
+    font-size:24px;
+    transition:.3s;
+}
+
+.location-content h6{
+    margin:0;
+    font-size:16px;
+    color:#fff;
+}
+
+.location-content span{
+    font-size:13px;
+    color:#bbb;
+}
+
+.location-card .arrow{
+    color:#ff6b6b;
+    transition:.3s;
+}
+
+.location-card:hover .arrow{
+    transform:translateX(6px);
+}
+
+.location-card:hover .fa-map-marker-alt{
+    transform:scale(1.15);
+}
 /* CARD */
 
 .team-card {
