@@ -2832,3 +2832,12 @@ h5,
   }
 
 }
+.direction-btn {
+    color: white !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.direction-btn:hover {
+    color: #fa5c5c !important;
+}

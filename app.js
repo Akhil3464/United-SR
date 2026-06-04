@@ -2,6 +2,7 @@ require('dotenv').config();
 console.log("EMAIL:", process.env.EMAIL);
 
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const bodyParser = require('body-parser');
 const { Resend } = require('resend');
@@ -9,6 +10,7 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const app = express();
+app.use(helmet()); 
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
