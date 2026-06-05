@@ -14,14 +14,48 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'", "https:", "fonts.googleapis.com", "cdnjs.cloudflare.com"],
-      fontSrc: ["'self'", "https:", "data:", "fonts.gstatic.com", "cdnjs.cloudflare.com"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "cdn.jsdelivr.net", "cdnjs.cloudflare.com"],
-      imgSrc: ["'self'", "data:", "https:", "res.cloudinary.com"],
+
+      styleSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https:",
+        "fonts.googleapis.com",
+        "cdnjs.cloudflare.com"
+      ],
+
+      fontSrc: [
+        "'self'",
+        "https:",
+        "data:",
+        "fonts.gstatic.com",
+        "cdnjs.cloudflare.com"
+      ],
+
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "cdn.jsdelivr.net",
+        "cdnjs.cloudflare.com"
+      ],
+
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https:",
+        "res.cloudinary.com"
+      ],
+
       mediaSrc: ["'self'"],
+
       connectSrc: ["'self'"],
-    },
-  },
+
+      frameSrc: [
+        "'self'",
+        "https://www.google.com",
+        "https://maps.google.com"
+      ]
+    }
+  }
 }));
 const PORT = process.env.PORT || 3000;
 
